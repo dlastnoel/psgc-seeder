@@ -9,6 +9,10 @@ class Province extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'code';
+
+    protected $keyType = 'string';
+
     protected $fillable = [
         'code',
         'region_code',

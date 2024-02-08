@@ -9,10 +9,14 @@ class Municipality extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'code';
+
+    protected $keyType = 'string';
+
     protected $fillable = [
         'province_code',
         'code',
-        'zipcode',
+        'zip_code',
         'name',
         'old_name'
     ];

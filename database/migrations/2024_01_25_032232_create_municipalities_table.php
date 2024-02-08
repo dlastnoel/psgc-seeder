@@ -15,7 +15,7 @@ return new class extends Migration
             // $table->id();
             $table->string('code');
             $table->string('province_code');
-            $table->string('zipcode')->nullable();
+            $table->string('zip_code')->nullable();
             $table->string('name');
             $table->string('old_name')->nullable();
             // $table->timestamps();

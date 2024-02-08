@@ -38,6 +38,10 @@ class PSGCImport implements ToCollection
                         $this->municipality = $addressMigrateService->seedMunicipality($this->province);
                         break;
 
+                    case 'City':
+                        $this->municipality = $addressMigrateService->seedMunicipality($this->province);
+                        break;
+
                     case 'Bgy':
                         $addressMigrateService->seedBarangay($this->municipality);
                 }
