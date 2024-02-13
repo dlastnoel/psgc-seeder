@@ -31,11 +31,7 @@ class PSGCImport implements ToCollection
                         break;
 
                     case 'Dist':
-                        $this->region = $addressMigrateService->seedRegion();
-                        break;
-
-                    case 'Dist':
-                        $this->region = $addressMigrateService->seedRegion();
+                        $this->province = $addressMigrateService->seedProvince($this->region);
                         break;
 
                     case 'Prov':

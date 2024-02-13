@@ -16,9 +16,12 @@ class ZipCodeImport implements ToCollection
         foreach ($collection as $i => $context) {
 
             if ($i !== 0) {
-
-                $municipality = Municipality::where('province_code', $context[0])
-                    ->where('name', 'LIKE', '%' . $context[2] . '%')->first();
+                $municipality = Municipality::where(function ($query) use ($context) {
+                    $query
+                        ->where('province_code', $context[0])
+                        ->where('name', 'LIKE', '%' . $context[2] . '%');
+                })
+                    ->first();
 
                 if ($municipality) {
                     $municipality->update([
